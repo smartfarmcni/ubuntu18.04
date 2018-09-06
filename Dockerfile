@@ -8,7 +8,7 @@ RUN apt-get install -y build-essential gfortran qttools5-dev qt5-default
 RUN apt-get install -y cmake git curl bzip2 redis-server libpqxx-dev libboost-test-dev
 RUN apt-get install -y libyaml-cpp-dev libboost-dev libblas-dev liblapack-dev
 RUN apt-get install -y openjdk-8-jre-headless
-RUN apt-get install -y socat # only for drone testing
+RUN apt-get install -y socat wget # only for drone testing
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | tee /etc/apt/sources.list.d/docker.list
 RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 RUN apt-get update
