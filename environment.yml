@@ -1,0 +1,20 @@
+# Comments of the type "# rpi (version)" state in which version a dependency
+# is contained in the channel rpi
+
+name: consumption-env
+
+dependencies:
+
+  - python=3.6.2        # rpi 3.6.3,   installed from rpi
+  - pandas=0.20.3       # rpi 0.21.0,  installed from rpi
+  - scikit-learn=0.19.0 # rpi 0.19.1,  installed from rpi
+  - numpy=1.13.1        # rpi 1.13.3,  installed from rpi
+  - ruamel_yaml=0.11.14 # rpi 0.11.14, installed from rpi
+  - sqlalchemy=1.1.4    # rpi 1.1.4,   installed from rpi
+  - psutil=5.2.2        # rpi 5.2.2,   installed from rpi
+
+  - pip:
+    - psycopg2==2.7.1    # rpi none,    installed from pip
+    - redis==2.10.5      # older 2.10.3 causes bug in redisHelper.py
+    - pytz
+    - python-dateutil
