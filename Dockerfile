@@ -9,8 +9,8 @@ RUN apt-get install -y cmake git curl bzip2 redis-server libpqxx-dev libboost-te
 RUN apt-get install -y libyaml-cpp-dev libboost-dev libblas-dev liblapack-dev
 RUN apt-get install -y openjdk-8-jre-headless
 RUN apt-get install -y socat # only for drone testing
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | sudo tee /etc/apt/sources.list.d/docker.list
-RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | tee /etc/apt/sources.list.d/docker.list
+RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 RUN apt-get update
 RUN apt-get install -y postgresql-9.6 
 RUN git clone --recursive --branch 3.5.4 https://github.com/Cylix/cpp_redis.git && cd cpp_redis && git submodule update --init --recursive && mkdir build && cd build && cmake .. && make && make install && cd .. 
