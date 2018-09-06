@@ -9,7 +9,7 @@ RUN apt-get install -y cmake git curl bzip2 redis-server libpqxx-dev libboost-te
 RUN apt-get install -y libyaml-cpp-dev libboost-dev libblas-dev liblapack-dev
 RUN apt-get install -y openjdk-8-jre-headless
 RUN apt-get install -y socat # only for drone testing
-RUN deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
+RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | sudo tee /etc/apt/sources.list.d/docker.list
 RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 RUN apt-get update
 RUN apt-get install -y postgresql-9.6 
