@@ -3,6 +3,7 @@ FROM ubuntu:18.04
 ADD ./environment.yml .
 
 RUN apt-get update
+RUN export DEBIAN_FRONTEND=noninteractive
 RUN apt-get install -y libopenblas-base libboost-python-dev libsuperlu5
 RUN apt-get install -y build-essential gfortran qttools5-dev qt5-default 
 RUN apt-get install -y cmake git curl bzip2 redis-server libpqxx-dev libboost-test-dev
