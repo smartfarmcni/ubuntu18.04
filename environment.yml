@@ -14,7 +14,7 @@ dependencies:
   - psutil=5.2.2        # rpi 5.2.2,   installed from rpi
 
   - pip:
-    - psycopg2==2.7.5-2    # rpi none,    installed from pip  (!!! ubuntu 18.04 needs >2.7.1 !!!)
+    - psycopg2==2.7.5    # rpi none,    installed from pip  (!!! ubuntu 18.04 needs >2.7.1 !!!)
     - redis==2.10.5      # older 2.10.3 causes bug in redisHelper.py
     - pytz
     - python-dateutil
